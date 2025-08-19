@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-        
+
         <!-- Google tag (gtag.js) -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-7K635X7EES"></script>
         <script>
@@ -17,24 +17,38 @@
     <title>Assembly Instructions - Storybound Woodwork</title>
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
     <div class="video-container">
         <div class="video-header">
-            <a href="index.html" class="back-btn">← Back to Home</a>
             <img src="logo_SBW.png" alt="Logo" class="video-logo">
+
+        </div>
+            <a href="index.html" class="back-btn">← Back to Home</a>
+        <div>
+            
         </div>
         
         <div class="pdf-wrapper">
             <div class="pdf-controls">
                 <h2>Dreamshelf Assembly Instructions</h2>
                 <a href="instruction_manual_dreamshelf.pdf" download class="download-btn">Download PDF</a>
+                <a href="instruction_manual_dreamshelf.pdf" target="_blank" class="view-btn">Open in New Tab</a>
             </div>
+            
+            <!-- PDF iframe - hidden on mobile -->
             <iframe 
                 src="instruction_manual_dreamshelf.pdf" 
                 title="Dreamshelf Assembly Instructions PDF"
-                frameborder="0">
+                frameborder="0"
+                class="pdf-iframe">
                 <p>Your browser does not support PDFs. <a href="instruction_manual_dreamshelf.pdf">Download the PDF</a> instead.</p>
             </iframe>
+            
+            <!-- Mobile-friendly message -->
+            <div class="mobile-pdf-message">
+                <p>📱 For the best mobile experience, tap "Download PDF" or "Open in New Tab" above.</p>
+            </div>
         </div>
         
         <div class="video-footer">
@@ -42,4 +56,4 @@
         </div>
     </div>
 </body>
-</html>
+</html><!DOCTYPE html>
