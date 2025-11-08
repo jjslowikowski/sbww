@@ -1,34 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
-        <!-- Google tag (gtag.js) -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-7K635X7EES"></script>
-        <script>
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-
-          gtag('config', 'G-7K635X7EES');
-        </script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-7K635X7EES"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-7K635X7EES');
+    </script>
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Storbound Woodwork</title>
+    <title>Storybound Woodwork</title>
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
     <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-    <div class="container">
-        <div class="logo-section">
-            <img src="logo_SBW.png" alt="Logo" class="logo">
-        </div>
-        
-        <div class="buttons-section">
-            <a href="instruction_video.html" class="video-btn">Dreamshelf Assembly Instructions</a>
-            <a href="about.html" class="video-btn">About</a>
+    <!-- Menu bar at top -->
+    <div class="menu-bar">
+        <a href="products.html" class="menu-link">Products</a>
+        <a href="about.html" class="menu-link">About</a>
+    </div>
+
+    <!-- Logo -->
+    <div class="logo-section">
+        <img src="logo_SBW.png" alt="Logo" class="logo">
+    </div>
+
+    <!-- Tagline in separate wider container -->
+    <div class="tagline-container">
+        <p class="tagline">We are a small workshop dedicated to exceptional craftsmanship and lasting customer relationships. To ensure every piece meets our standards and every client receives personal attention, all purchases are handled through direct inquiry only. Visit our products page to explore our designs.</p>
+    </div>
+
+    <!-- Copyright -->
+    <div class="copyright">
+        <p>&copy; 2025 Storybound Studios, LLC. All designs are the copyrighted property of Storybound Studios, LLC. All rights reserved.</p>
+    </div>
+
+    <!-- Popup Overlay -->
+    <div id="welcomePopup" class="popup-overlay">
+        <div class="popup-content">
+            <button class="popup-close" onclick="closePopup()">&times;</button>
+            <h2>Welcome to Storybound Woodwork</h2>
+            <p>As of 11/1/2025 we are almost at capacity with orders for the remainder of the 2025 calendar year but still have a few slots left for the holiday season.</p>
+            <a href="products.html" class="popup-btn">View Products</a>
         </div>
     </div>
+
+    <script>
+        // Check if user has visited before
+        function showPopup() {
+            const hasVisited = localStorage.getItem('hasVisitedSBW');
+
+            if (!hasVisited) {
+                const popup = document.getElementById('welcomePopup');
+                popup.classList.add('show');
+                localStorage.setItem('hasVisitedSBW', 'true');
+            }
+        }
+
+        function closePopup() {
+            const popup = document.getElementById('welcomePopup');
+            popup.classList.remove('show');
+        }
+
+        // Show popup when page loads
+        window.addEventListener('load', showPopup);
+
+        // Close popup when clicking outside of it
+        document.getElementById('welcomePopup').addEventListener('click', function (e) {
+            if (e.target === this) {
+                closePopup();
+            }
+        });
+    </script>
 </body>
 </html>
